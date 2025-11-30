@@ -1,0 +1,235 @@
+/*
+Theme Name: VelocityCash AI Child
+Theme URI: https://velocitycashai.com
+Description: Child theme optimizado para conversiones - AI Consulting Business
+Author: VelocityCash Team
+Author URI: https://velocitycashai.com
+Template: astra
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: velocitycash-child
+*/
+
+/* ==========================================================================
+   VARIABLES CSS - Hormozi Brand Colors
+   ========================================================================== */
+:root {
+    --vc-primary: #0066FF;
+    --vc-primary-dark: #0052CC;
+    --vc-secondary: #00FF88;
+    --vc-secondary-dark: #00CC6E;
+    --vc-dark: #0A0E27;
+    --vc-dark-light: #1A1F3A;
+    --vc-light: #F8FAFC;
+    --vc-white: #FFFFFF;
+    --vc-success: #00FF88;
+    --vc-warning: #FFB800;
+    --vc-danger: #FF3B30;
+    
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    --shadow-sm: 0 2px 4px rgba(10, 14, 39, 0.1);
+    --shadow-md: 0 4px 12px rgba(10, 14, 39, 0.15);
+    --shadow-lg: 0 8px 24px rgba(10, 14, 39, 0.2);
+    --shadow-xl: 0 16px 48px rgba(10, 14, 39, 0.25);
+    
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--vc-dark);
+    background: var(--vc-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--vc-dark);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+/* ==========================================================================
+   BOTONES HORMOZI
+   ========================================================================== */
+.btn, .wp-block-button__link, .woocommerce button.button, input[type="submit"] {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--vc-primary) 0%, var(--vc-primary-dark) 100%);
+    color: var(--vc-white);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--vc-secondary) 0%, var(--vc-secondary-dark) 100%);
+    color: var(--vc-dark);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--vc-dark) 0%, var(--vc-dark-light) 100%);
+    color: var(--vc-white);
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.hero-headline {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+}
+
+/* Value Stack */
+.value-stack {
+    background: var(--vc-light);
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.value-item {
+    background: var(--vc-white);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+}
+
+.value-total {
+    background: var(--vc-dark);
+    color: var(--vc-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.value-total-amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--vc-secondary);
+}
+
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: var(--vc-white);
+    border: 2px solid var(--vc-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.pricing-card.featured {
+    border-color: var(--vc-primary);
+    transform: scale(1.05);
+}
+
+/* Scarcity Timer */
+.scarcity-bar {
+    background: var(--vc-danger);
+    color: var(--vc-white);
+    padding: var(--spacing-sm);
+    text-align: center;
+    font-weight: 700;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.countdown-timer {
+    display: inline-flex;
+    gap: var(--spacing-sm);
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* Guarantee Section */
+.guarantee-section {
+    background: linear-gradient(135deg, var(--vc-secondary) 0%, var(--vc-secondary-dark) 100%);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    color: var(--vc-dark);
+}
+
+/* Blog Optimization */
+.lead-magnet-box {
+    background: linear-gradient(135deg, var(--vc-primary) 0%, var(--vc-primary-dark) 100%);
+    color: var(--vc-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pricing-card.featured { transform: scale(1); }
+    .pricing-grid { grid-template-columns: 1fr; }
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.text-center { text-align: center; }
+.hidden { display: none; }
